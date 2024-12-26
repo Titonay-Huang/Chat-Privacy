@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Privacy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-title">Chat Privacy</div>
+        <div id="chat-box"></div>
+        <form id="message-form">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <input type="file" id="file-input" disabled>
+            <label for="file-input" id="file-label" disabled>选择文件</label>
+            <button type="submit" id="send-button" disabled>Send</button>
+        </form>
+        <div id="username-section">
+            <span id="current-username">Username: <span id="username-display">undefined</span></span>
+            <button id="change-username-button">Change Username</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

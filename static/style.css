@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+#chat-container {
+    width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* 设置一个固定高度 */
+}
+
+#chat-title {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff; /* 设置标题颜色为蓝色 */
+    border-bottom: 1px solid #ddd;
+}
+
+#chat-box {
+    flex: 1; /* 让聊天框占据剩余空间 */
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+#message-form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#message-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#message-form input[type="file"] {
+    display: none; /* 隐藏原始文件输入 */
+}
+
+#message-form label[for="file-input"] {
+    flex: 0 0 auto; /* 不让文件输入标签占据多余空间 */
+    padding: 10px 20px;
+    background-color: #b3d4fc; /* 初始灰色 */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: not-allowed;
+    margin-right: 10px;
+    transition: background-color 0.3s, cursor 0.3s;
+}
+
+#message-form label[for="file-input"]:hover {
+    background-color: #b3d4fc; /* 保持灰色 */
+}
+
+#message-form label[for="file-input"].enabled {
+    background-color: #007bff; /* 蓝色 */
+    cursor: pointer;
+}
+
+#message-form label[for="file-input"].enabled:hover {
+    background-color: #0056b3; /* 淡蓝色 */
+}
+
+#message-form button {
+    padding: 10px 20px;
+    background-color: #b3d4fc; /* 初始灰色 */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: not-allowed;
+    transition: background-color 0.3s, cursor 0.3s;
+}
+
+#message-form button:hover {
+    background-color: #b3d4fc; /* 保持灰色 */
+}
+
+#message-form button.enabled {
+    background-color: #007bff; /* 蓝色 */
+    cursor: pointer;
+}
+
+#message-form button.enabled:hover {
+    background-color: #0056b3; /* 淡蓝色 */
+}
+
+#username-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#current-username {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#change-username-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#change-username-button:hover {
+    background-color: #0056b3;
+}
+
+#change-username-button.disabled {
+    background-color: #b3d4fc; /* 淡蓝色 */
+    cursor: not-allowed;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.username {
+    font-weight: bold;
+    color: #51a0f5;
+}
