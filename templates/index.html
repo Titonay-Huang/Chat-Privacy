@@ -8,8 +8,14 @@
 </head>
 <body>
     <div id="chat-container">
-        <div id="chat-title">Chat Privacy</div>
-        <div id="chat-box"></div>
+        <div id="chat-title"><h3>Chat Privacy<h3></div>
+        <div id="online-users" style="text-align: center;">
+            <div id="online-users-count">在线用户数量: 0</div>
+            <div id="online-users-list">在线用户: </div>
+        </div>
+        <div id="chat-box">
+            <div id="chat-history"></div> <!-- 添加聊天历史容器 -->
+        </div>
         <form id="message-form">
             <input type="text" id="message-input" placeholder="Type a message...">
             <input type="file" id="file-input" disabled>

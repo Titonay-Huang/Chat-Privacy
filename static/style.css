@@ -6,25 +6,42 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f4f4f9;
+    overflow: hidden; /* 防止滚动条出现 */
 }
 
 #chat-container {
-    width: 600px;
+    width: 100%; /* 占满整个宽度 */
+    height: 100%; /* 占满整个高度 */
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    height: 500px; /* 设置一个固定高度 */
+    position: relative; /* 添加相对定位 */
 }
 
 #chat-title {
     text-align: center;
-    padding: 10px;
     font-size: 20px;
     font-weight: bold;
     color: #007bff; /* 设置标题颜色为蓝色 */
     border-bottom: 1px solid #ddd;
+}
+
+#online-users {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#online-users-count {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#online-users-list {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #007bff;
 }
 
 #chat-box {
@@ -132,11 +149,28 @@ body {
     cursor: not-allowed;
 }
 
-.message {
-    margin: 10px 0;
-}
-
 .username {
     font-weight: bold;
     color: #51a0f5;
+}
+
+.message {
+    margin: 10px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.message.self {
+    justify-content: flex-end;
+}
+
+.message.self .username {
+    color: #51a0f5;
+    margin-left: 5px; /* 调整为左边距 */
+}
+
+.message .username {
+    font-weight: bold;
+    color: #51a0f5;
+    margin-right: 5px; /* 调整为右边距 */
 }
