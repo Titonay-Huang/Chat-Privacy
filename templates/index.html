@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="zn">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Privacy</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
-    <div id="chat-container">
-        <div id="chat-title"><h3>Chat Privacy<h3></div>
-        <div id="online-users" style="text-align: center;">
+    <div id="chat-title">
+        <h3>Chat Privacy</h3>
+        <img src="{{ url_for('static', filename='img/unread.png') }}" class="unread-notification" id="unread-icon" alt="未读消息">
+    </div>
+    
+    <div class="main-container">
+        <!-- 左侧在线用户列表 -->
+        <div id="online-users">
+            <div id="current-user">我的用户名: </div>
             <div id="online-users-count">在线用户数量: 0</div>
-            <div id="online-users-list">在线用户: </div>
+            <div id="online-users-title">在线用户名:</div>
+            <div id="online-users-list"></div>
         </div>
-        <div id="chat-box">
-            <div id="chat-history"></div> <!-- 添加聊天历史容器 -->
-        </div>
-        <form id="message-form">
-            <input type="text" id="message-input" placeholder="Type a message...">
-            <input type="file" id="file-input" disabled>
-            <label for="file-input" id="file-label" disabled>选择文件</label>
-            <button type="submit" id="send-button" disabled>Send</button>
-        </form>
-        <div id="username-section">
-            <span id="current-username">Username: <span id="username-display">undefined</span></span>
-            <button id="change-username-button">Change Username</button>
+
+        <!-- 右侧聊天区域 -->
+        <div id="chat-container">
+            <div id="chat-box">
+                <div id="chat-history"></div>
+            </div>
+            
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="输入消息...">
+                <input type="file" id="file-input" disabled>
+                <label for="file-input" id="file-label" disabled>选择文件</label>
+                <button type="submit" id="send-button" disabled>发送</button>
+            </form>
         </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>
